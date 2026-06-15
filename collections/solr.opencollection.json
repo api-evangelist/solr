@@ -1,0 +1,330 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Solr REST API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Collections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List collections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8983/api/collections"
+          },
+          "docs": "List collections"
+        },
+        {
+          "info": {
+            "name": "Create, alias, backup, or restore a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8983/api/collections"
+          },
+          "docs": "Create, alias, backup, or restore a collection"
+        },
+        {
+          "info": {
+            "name": "Modify collection attributes and replica settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8983/api/c/:collection",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Modify collection attributes and replica settings"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Update",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Index or update documents in a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8983/api/c/:collection/update",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Index or update documents in a collection"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Config",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8983/api/c/:collection/config",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get configuration"
+        },
+        {
+          "info": {
+            "name": "Modify configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8983/api/c/:collection/config",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Modify configuration"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Schema",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get schema",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8983/api/c/:collection/schema",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get schema"
+        },
+        {
+          "info": {
+            "name": "Modify schema (add/replace/delete fields and types)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8983/api/c/:collection/schema",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Modify schema (add/replace/delete fields and types)"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Shards",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Split a shard, create a shard, or add a replica",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8983/api/c/:collection/shards",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Split a shard, create a shard, or add a replica"
+        },
+        {
+          "info": {
+            "name": "Delete a shard or force leader election",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8983/api/c/:collection/shards/:shardName",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "shardName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a shard or force leader election"
+        },
+        {
+          "info": {
+            "name": "Delete a replica",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8983/api/c/:collection/shards/:shardName/:replicaName",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "shardName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "replicaName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a replica"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Cores",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a core",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8983/api/cores"
+          },
+          "docs": "Create a core"
+        },
+        {
+          "info": {
+            "name": "Reload, rename, delete, or unload a core",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8983/api/cores/:coreName",
+            "params": [
+              {
+                "name": "coreName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Reload, rename, delete, or unload a core"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "CollectionsAdminHandler",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Legacy Collections admin handler (action via query string)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8983/solr/admin/collections",
+            "params": [
+              {
+                "name": "action",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "async",
+                "value": "",
+                "type": "query",
+                "description": "Optional async request id for non-blocking execution"
+              }
+            ]
+          },
+          "docs": "Legacy Collections admin handler (action via query string)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
