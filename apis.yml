@@ -51,6 +51,12 @@ apis:
         url: https://solr.apache.org/guide/solr/latest/deployment-guide/client-apis.html
 
 common:
+  - type: VulnerabilityDisclosure
+    url: security/solr-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/solr-domain-security.yml
+  - type: Authentication
+    url: authentication/solr-authentication.yml
   - type: Website
     url: https://solr.apache.org/
   - type: Documentation
@@ -61,6 +67,8 @@ common:
     url: https://solr.apache.org/downloads.html
   - type: Community
     url: https://solr.apache.org/community.html
+  - url: https://solr.apache.org/feeds/solr/news.atom.xml
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
