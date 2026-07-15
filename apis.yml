@@ -51,6 +51,8 @@ apis:
         url: https://solr.apache.org/guide/solr/latest/deployment-guide/client-apis.html
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/solr-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/solr-vulnerability-disclosure.yml
   - type: DomainSecurity
