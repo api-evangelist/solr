@@ -1,0 +1,72 @@
+openapi: 3.1.0
+info:
+  title: Apache Solr REST Collections API
+  version: v2
+  summary: HTTP/REST API for Apache Solr v2 covering collections, cores, schema, configuration, update and query handlers.
+  description: 'Apache Solr exposes a REST API under /api (v2) on each Solr node. This specification
+
+    covers collection lifecycle, core administration, per-collection schema/config/update
+
+    operations, and the legacy Collections admin handler still supported under
+
+    /solr/admin/collections.
+
+
+    Authentication is pluggable (Basic, JWT, Certificate). Where security is enabled,
+
+    Basic authentication is the most common configuration.
+
+    '
+  contact:
+    name: Apache Solr Reference Guide
+    url: https://solr.apache.org/guide/
+servers:
+- url: http://localhost:8983
+  description: Default Solr node (replace host/port for your deployment)
+security:
+- basicAuth: []
+tags:
+- name: Collections
+  description: Cluster-level collection management
+paths:
+  /api/collections:
+    get:
+      tags:
+      - Collections
+      summary: List collections
+      operationId: listCollections
+      responses:
+        '200':
+          description: Collection list
+    post:
+      tags:
+      - Collections
+      summary: Create, alias, backup, or restore a collection
+      operationId: createCollection
+      responses:
+        '200':
+          description: Operation accepted
+  /api/c/{collection}:
+    parameters:
+    - $ref: '#/components/parameters/Collection'
+    post:
+      tags:
+      - Collections
+      summary: Modify collection attributes and replica settings
+      operationId: modifyCollection
+      responses:
+        '200':
+          description: Collection updated
+components:
+  parameters:
+    Collection:
+      name: collection
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication (Solr Basic Auth plugin). JWT and certificate auth plugins are also supported.
