@@ -9,7 +9,19 @@ description: >-
   comprehensive HTTP/REST API (v1 and v2) for indexing, querying, and managing
   cores, collections, and configurations.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/solr.png
 tags:
   - Search
   - Enterprise Search
@@ -23,33 +35,101 @@ created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.19'
 apis:
-  - aid: solr:rest-api
-    name: Apache Solr REST API
-    description: >-
-      HTTP/REST API for Apache Solr providing endpoints for querying,
-      indexing, schema management, collections administration, and core
-      administration. The v2 API uses RESTful resource paths under /api
-      while the legacy v1 API uses /solr endpoints. Authentication is
-      pluggable and supports Basic, JWT, and Certificate authentication.
-    humanURL: https://solr.apache.org/guide/
-    baseURL: http://localhost:8983/api
-    tags:
-      - Search
-      - Indexing
-      - Collections
-      - Cores
-      - Schema
-      - Query
-    properties:
-      - type: Documentation
-        url: https://solr.apache.org/guide/
-      - type: V2 API Reference
-        url: https://solr.apache.org/guide/solr/latest/configuration-guide/v2-api.html
-      - type: Collections API
-        url: https://solr.apache.org/guide/solr/latest/configuration-guide/collections-api.html
-      - type: Client APIs
-        url: https://solr.apache.org/guide/solr/latest/deployment-guide/client-apis.html
-
+- aid: solr:rest-api
+  name: Apache Solr REST API
+  description: >-
+    HTTP/REST API for Apache Solr providing endpoints for querying, indexing, schema management, collections
+    administration, and core administration. The v2 API uses RESTful resource paths under /api while the
+    legacy v1 API uses /solr endpoints. Authentication is pluggable and supports Basic, JWT, and Certificate
+    authentication.
+  humanURL: https://solr.apache.org/guide/
+  baseURL: http://localhost:8983/api
+  tags:
+  - Search
+  - Indexing
+  - Collections
+  - Cores
+  - Schema
+  - Query
+  properties:
+  - type: Documentation
+    url: https://solr.apache.org/guide/
+  - type: V2 API Reference
+    url: https://solr.apache.org/guide/solr/latest/configuration-guide/v2-api.html
+  - type: Collections API
+    url: https://solr.apache.org/guide/solr/latest/configuration-guide/collections-api.html
+  - type: Client APIs
+    url: https://solr.apache.org/guide/solr/latest/deployment-guide/client-apis.html
+- aid: solr:solr-collections-api
+  name: Apache Solr Collections API
+  description: Cluster-level collection management
+  humanURL: https://solr.apache.org/guide/
+  baseURL: http://localhost:8983/api
+  tags:
+  - Collections
+  properties:
+  - type: OpenAPI
+    url: openapi/solr-collections-api-openapi.yml
+- aid: solr:solr-collectionsadminhandler-api
+  name: Apache Solr CollectionsAdminHandler API
+  description: Legacy Collections admin handler endpoints
+  humanURL: https://solr.apache.org/guide/
+  baseURL: http://localhost:8983/api
+  tags:
+  - CollectionsAdminHandler
+  properties:
+  - type: OpenAPI
+    url: openapi/solr-collectionsadminhandler-api-openapi.yml
+- aid: solr:solr-config-api
+  name: Apache Solr Config API
+  description: Per-collection configuration operations
+  humanURL: https://solr.apache.org/guide/
+  baseURL: http://localhost:8983/api
+  tags:
+  - Config
+  properties:
+  - type: OpenAPI
+    url: openapi/solr-config-api-openapi.yml
+- aid: solr:solr-cores-api
+  name: Apache Solr Cores API
+  description: Node-level core administration
+  humanURL: https://solr.apache.org/guide/
+  baseURL: http://localhost:8983/api
+  tags:
+  - Cores
+  properties:
+  - type: OpenAPI
+    url: openapi/solr-cores-api-openapi.yml
+- aid: solr:solr-schema-api
+  name: Apache Solr Schema API
+  description: Per-collection schema operations
+  humanURL: https://solr.apache.org/guide/
+  baseURL: http://localhost:8983/api
+  tags:
+  - Schema
+  properties:
+  - type: OpenAPI
+    url: openapi/solr-schema-api-openapi.yml
+- aid: solr:solr-shards-api
+  name: Apache Solr Shards API
+  description: Shard management for collections
+  humanURL: https://solr.apache.org/guide/
+  baseURL: http://localhost:8983/api
+  tags:
+  - Shards
+  properties:
+  - type: OpenAPI
+    url: openapi/solr-shards-api-openapi.yml
+- aid: solr:solr-update-api
+  name: Apache Solr Update API
+  description: Per-collection document update operations
+  humanURL: https://solr.apache.org/guide/
+  baseURL: http://localhost:8983/api
+  tags:
+  - Update
+  properties:
+  - type: OpenAPI
+    url: openapi/solr-update-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/solr-agentic-access.yml
