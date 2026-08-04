@@ -1,0 +1,26 @@
+{
+  "provider": "solr",
+  "sources": [
+    "solr-collections-api-openapi.yml",
+    "solr-collectionsadminhandler-api-openapi.yml",
+    "solr-config-api-openapi.yml",
+    "solr-cores-api-openapi.yml",
+    "solr-schema-api-openapi.yml",
+    "solr-shards-api-openapi.yml",
+    "solr-update-api-openapi.yml"
+  ],
+  "outputs": [
+    "solr-collections-api-openapi.yml",
+    "solr-collectionsadminhandler-api-openapi.yml",
+    "solr-config-api-openapi.yml",
+    "solr-cores-api-openapi.yml",
+    "solr-schema-api-openapi.yml",
+    "solr-shards-api-openapi.yml",
+    "solr-update-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

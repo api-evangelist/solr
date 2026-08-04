@@ -1,0 +1,221 @@
+openapi: 3.1.0
+info:
+  title: Apache Solr REST API
+  version: "v2"
+  summary: HTTP/REST API for Apache Solr v2 covering collections, cores, schema, configuration, update and query handlers.
+  description: |
+    Apache Solr exposes a REST API under /api (v2) on each Solr node. This specification
+    covers collection lifecycle, core administration, per-collection schema/config/update
+    operations, and the legacy Collections admin handler still supported under
+    /solr/admin/collections.
+
+    Authentication is pluggable (Basic, JWT, Certificate). Where security is enabled,
+    Basic authentication is the most common configuration.
+  contact:
+    name: Apache Solr Reference Guide
+    url: https://solr.apache.org/guide/
+servers:
+  - url: http://localhost:8983
+    description: Default Solr node (replace host/port for your deployment)
+security:
+  - basicAuth: []
+tags:
+  - name: Collections
+    description: Cluster-level collection management
+  - name: Cores
+    description: Node-level core administration
+  - name: Schema
+    description: Per-collection schema operations
+  - name: Config
+    description: Per-collection configuration operations
+  - name: Update
+    description: Per-collection document update operations
+  - name: Shards
+    description: Shard management for collections
+  - name: CollectionsAdminHandler
+    description: Legacy Collections admin handler endpoints
+paths:
+  /api/collections:
+    get:
+      tags: [Collections]
+      summary: List collections
+      operationId: listCollections
+      responses:
+        "200":
+          description: Collection list
+    post:
+      tags: [Collections]
+      summary: Create, alias, backup, or restore a collection
+      operationId: createCollection
+      responses:
+        "200":
+          description: Operation accepted
+  /api/c/{collection}:
+    parameters:
+      - $ref: '#/components/parameters/Collection'
+    post:
+      tags: [Collections]
+      summary: Modify collection attributes and replica settings
+      operationId: modifyCollection
+      responses:
+        "200":
+          description: Collection updated
+  /api/c/{collection}/update:
+    parameters:
+      - $ref: '#/components/parameters/Collection'
+    post:
+      tags: [Update]
+      summary: Index or update documents in a collection
+      operationId: updateCollection
+      responses:
+        "200":
+          description: Update accepted
+  /api/c/{collection}/config:
+    parameters:
+      - $ref: '#/components/parameters/Collection'
+    get:
+      tags: [Config]
+      summary: Get configuration
+      operationId: getConfig
+      responses:
+        "200":
+          description: Configuration document
+    post:
+      tags: [Config]
+      summary: Modify configuration
+      operationId: updateConfig
+      responses:
+        "200":
+          description: Configuration updated
+  /api/c/{collection}/schema:
+    parameters:
+      - $ref: '#/components/parameters/Collection'
+    get:
+      tags: [Schema]
+      summary: Get schema
+      operationId: getSchema
+      responses:
+        "200":
+          description: Schema document
+    post:
+      tags: [Schema]
+      summary: Modify schema (add/replace/delete fields and types)
+      operationId: updateSchema
+      responses:
+        "200":
+          description: Schema updated
+  /api/c/{collection}/shards:
+    parameters:
+      - $ref: '#/components/parameters/Collection'
+    post:
+      tags: [Shards]
+      summary: Split a shard, create a shard, or add a replica
+      operationId: createShard
+      responses:
+        "200":
+          description: Shard operation accepted
+  /api/c/{collection}/shards/{shardName}:
+    parameters:
+      - $ref: '#/components/parameters/Collection'
+      - name: shardName
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      tags: [Shards]
+      summary: Delete a shard or force leader election
+      operationId: deleteShard
+      responses:
+        "200":
+          description: Shard removed
+  /api/c/{collection}/shards/{shardName}/{replicaName}:
+    parameters:
+      - $ref: '#/components/parameters/Collection'
+      - name: shardName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: replicaName
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      tags: [Shards]
+      summary: Delete a replica
+      operationId: deleteReplica
+      responses:
+        "200":
+          description: Replica removed
+  /api/cores:
+    post:
+      tags: [Cores]
+      summary: Create a core
+      operationId: createCore
+      responses:
+        "200":
+          description: Core created
+  /api/cores/{coreName}:
+    parameters:
+      - name: coreName
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      tags: [Cores]
+      summary: Reload, rename, delete, or unload a core
+      operationId: modifyCore
+      responses:
+        "200":
+          description: Core operation accepted
+  /solr/admin/collections:
+    get:
+      tags: [CollectionsAdminHandler]
+      summary: Legacy Collections admin handler (action via query string)
+      operationId: collectionsAdmin
+      parameters:
+        - name: action
+          in: query
+          required: true
+          schema:
+            type: string
+            enum:
+              - CREATE
+              - LIST
+              - DELETE
+              - RELOAD
+              - BACKUP
+              - RESTORE
+              - SPLITSHARD
+              - ADDREPLICA
+              - DELETEREPLICA
+              - REQUESTSTATUS
+              - DELETESTATUS
+        - name: name
+          in: query
+          schema:
+            type: string
+        - name: async
+          in: query
+          schema:
+            type: string
+          description: Optional async request id for non-blocking execution
+      responses:
+        "200":
+          description: Action response
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication (Solr Basic Auth plugin). JWT and certificate auth plugins are also supported.
+  parameters:
+    Collection:
+      name: collection
+      in: path
+      required: true
+      schema:
+        type: string
