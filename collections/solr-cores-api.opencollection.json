@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Solr REST Collections Cores API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Cores",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a core",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8983/api/cores"
+          },
+          "docs": "Create a core"
+        },
+        {
+          "info": {
+            "name": "Reload, rename, delete, or unload a core",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8983/api/cores/:coreName",
+            "params": [
+              {
+                "name": "coreName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Reload, rename, delete, or unload a core"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,94 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Solr REST Collections Shards API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Shards",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Split a shard, create a shard, or add a replica",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8983/api/c/:collection/shards",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Split a shard, create a shard, or add a replica"
+        },
+        {
+          "info": {
+            "name": "Delete a shard or force leader election",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8983/api/c/:collection/shards/:shardName",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "shardName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a shard or force leader election"
+        },
+        {
+          "info": {
+            "name": "Delete a replica",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8983/api/c/:collection/shards/:shardName/:replicaName",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "shardName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "replicaName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a replica"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

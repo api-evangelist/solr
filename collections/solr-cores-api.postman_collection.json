@@ -1,0 +1,197 @@
+{
+  "item": [
+    {
+      "id": "a8e60c0a-564c-4a7c-9ab0-1e72711d58a5",
+      "name": "Cores",
+      "description": {
+        "content": "Node-level core administration",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bad3e58f-2192-474d-b1e2-44de4c021957",
+          "name": "Create a core",
+          "request": {
+            "name": "Create a core",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "cores"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7ff4ce59-f71c-42e5-a84a-34cea9dd9945",
+              "name": "Core created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "cores"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f1aab27e-6d00-47a7-b92c-2bc867e89541",
+          "name": "Reload, rename, delete, or unload a core",
+          "request": {
+            "name": "Reload, rename, delete, or unload a core",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "cores",
+                ":coreName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "coreName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "38f50fde-d905-43a6-a79d-3610271e5a04",
+              "name": "Core operation accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "cores",
+                    ":coreName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "coreName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8983",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "77ba86bb-356f-4640-a471-6e669a4584ae",
+    "name": "Apache Solr REST Collections Cores API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apache Solr exposes a REST API under /api (v2) on each Solr node. This specification\ncovers collection lifecycle, core administration, per-collection schema/config/update\noperations, and the legacy Collections admin handler still supported under\n/solr/admin/collections.\n\nAuthentication is pluggable (Basic, JWT, Certificate). Where security is enabled,\nBasic authentication is the most common configuration.\n\n\nContact Support:\n Name: Apache Solr Reference Guide",
+      "type": "text/plain"
+    }
+  }
+}

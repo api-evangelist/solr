@@ -1,0 +1,219 @@
+{
+  "item": [
+    {
+      "id": "d704d036-1079-480e-a7f2-1f94137d0d60",
+      "name": "Config",
+      "description": {
+        "content": "Per-collection configuration operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "44eb9e71-c507-4858-a5ed-cfe0cd62682b",
+          "name": "Get configuration",
+          "request": {
+            "name": "Get configuration",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "c",
+                ":collection",
+                "config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "collection",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cfda2784-42f0-4fdc-a5fe-d578e23e4bda",
+              "name": "Configuration document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "c",
+                    ":collection",
+                    "config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "collection",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5067b423-2e2c-481e-8b04-417dc709e5e2",
+          "name": "Modify configuration",
+          "request": {
+            "name": "Modify configuration",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "c",
+                ":collection",
+                "config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "collection",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0ee4ab09-40e3-4739-8edc-152c3de43d2c",
+              "name": "Configuration updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "c",
+                    ":collection",
+                    "config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "collection",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8983",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8101d5fb-8cb7-48b2-a220-5e2182c5ef94",
+    "name": "Apache Solr REST Collections Config API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apache Solr exposes a REST API under /api (v2) on each Solr node. This specification\ncovers collection lifecycle, core administration, per-collection schema/config/update\noperations, and the legacy Collections admin handler still supported under\n/solr/admin/collections.\n\nAuthentication is pluggable (Basic, JWT, Certificate). Where security is enabled,\nBasic authentication is the most common configuration.\n\n\nContact Support:\n Name: Apache Solr Reference Guide",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "item": [
+    {
+      "id": "054a176f-e8b0-4806-9c70-0c91ab475c02",
+      "name": "Update",
+      "description": {
+        "content": "Per-collection document update operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3ca3e17a-1123-48c9-ad44-2a29ecae67dd",
+          "name": "Index or update documents in a collection",
+          "request": {
+            "name": "Index or update documents in a collection",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "c",
+                ":collection",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "collection",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a3072b56-167e-41b6-b1e8-016a43ac3c61",
+              "name": "Update accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "c",
+                    ":collection",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "collection",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8983",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "9a56b557-e2e6-4f8d-aa6c-1a8871ab295c",
+    "name": "Apache Solr REST Collections Update API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apache Solr exposes a REST API under /api (v2) on each Solr node. This specification\ncovers collection lifecycle, core administration, per-collection schema/config/update\noperations, and the legacy Collections admin handler still supported under\n/solr/admin/collections.\n\nAuthentication is pluggable (Basic, JWT, Certificate). Where security is enabled,\nBasic authentication is the most common configuration.\n\n\nContact Support:\n Name: Apache Solr Reference Guide",
+      "type": "text/plain"
+    }
+  }
+}

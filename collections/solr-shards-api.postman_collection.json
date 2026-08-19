@@ -1,0 +1,354 @@
+{
+  "item": [
+    {
+      "id": "2531f65f-2f62-411d-96d0-8d5e779e4b26",
+      "name": "Shards",
+      "description": {
+        "content": "Shard management for collections",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1ed4aa04-4834-44b9-8833-ddf57cddb6b6",
+          "name": "Split a shard, create a shard, or add a replica",
+          "request": {
+            "name": "Split a shard, create a shard, or add a replica",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "c",
+                ":collection",
+                "shards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "collection",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d4d79411-0813-4ecb-8d74-1bfae5f03bc9",
+              "name": "Shard operation accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "c",
+                    ":collection",
+                    "shards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "collection",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c0ec863c-939c-4aec-97e4-4197bfb3b6cc",
+          "name": "Delete a shard or force leader election",
+          "request": {
+            "name": "Delete a shard or force leader election",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "c",
+                ":collection",
+                "shards",
+                ":shardName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "collection",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "shardName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6dd5b405-cd32-48b6-8100-d14aaf87487b",
+              "name": "Shard removed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "c",
+                    ":collection",
+                    "shards",
+                    ":shardName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "collection",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shardName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "04f83f22-5173-4612-8dfd-fac28413f002",
+          "name": "Delete a replica",
+          "request": {
+            "name": "Delete a replica",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "c",
+                ":collection",
+                "shards",
+                ":shardName",
+                ":replicaName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "collection",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "shardName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "replicaName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "58a2dbaf-6054-4a1d-807b-a3c562251235",
+              "name": "Replica removed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "c",
+                    ":collection",
+                    "shards",
+                    ":shardName",
+                    ":replicaName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "collection",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shardName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "replicaName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8983",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2a931c66-d833-47a4-af75-25e0b4423e73",
+    "name": "Apache Solr REST Collections Shards API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apache Solr exposes a REST API under /api (v2) on each Solr node. This specification\ncovers collection lifecycle, core administration, per-collection schema/config/update\noperations, and the legacy Collections admin handler still supported under\n/solr/admin/collections.\n\nAuthentication is pluggable (Basic, JWT, Certificate). Where security is enabled,\nBasic authentication is the most common configuration.\n\n\nContact Support:\n Name: Apache Solr Reference Guide",
+      "type": "text/plain"
+    }
+  }
+}
