@@ -26,6 +26,13 @@ tags:
   - Search
   - Enterprise Search
   - Full-Text Search
+  - Open-Source
+  - Lucene
+  - Indexing
+tags_raw:
+  - Search
+  - Enterprise Search
+  - Full-Text Search
   - Open Source
   - Lucene
   - Indexing
@@ -47,6 +54,13 @@ apis:
   tags:
   - Search
   - Indexing
+  - Collection
+  - Cores
+  - Schema
+  - Query
+  tags_raw:
+  - Search
+  - Indexing
   - Collections
   - Cores
   - Schema
@@ -66,6 +80,8 @@ apis:
   humanURL: https://solr.apache.org/guide/
   baseURL: http://localhost:8983/api
   tags:
+  - Collection
+  tags_raw:
   - Collections
   properties:
   - type: OpenAPI
@@ -125,7 +141,8 @@ apis:
   description: Per-collection document update operations
   humanURL: https://solr.apache.org/guide/
   baseURL: http://localhost:8983/api
-  tags:
+  tags: []
+  tags_raw:
   - Update
   properties:
   - type: OpenAPI
