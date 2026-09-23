@@ -1,13 +1,7 @@
 {
   "provider": "solr",
   "sources": [
-    "solr-collections-api-openapi.yml",
-    "solr-collectionsadminhandler-api-openapi.yml",
-    "solr-config-api-openapi.yml",
-    "solr-cores-api-openapi.yml",
-    "solr-schema-api-openapi.yml",
-    "solr-shards-api-openapi.yml",
-    "solr-update-api-openapi.yml"
+    "_original/solr-openapi.yml"
   ],
   "outputs": [
     "solr-collections-api-openapi.yml",
@@ -21,6 +15,18 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "solr-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "solr-collections-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "solr-collectionsadminhandler-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "solr-config-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "solr-cores-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "solr-schema-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "solr-shards-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "solr-update-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

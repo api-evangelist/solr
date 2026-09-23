@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Apache Solr REST Collections CollectionsAdminHandler API
+  title: Apache Solr REST Collections Admin Handler API
   version: v2
   summary: HTTP/REST API for Apache Solr v2 covering collections, cores, schema, configuration, update and query handlers.
   description: 'Apache Solr exposes a REST API under /api (v2) on each Solr node. This specification
@@ -14,9 +14,7 @@ info:
 
     Authentication is pluggable (Basic, JWT, Certificate). Where security is enabled,
 
-    Basic authentication is the most common configuration.
-
-    '
+    Basic authentication is the most common configuration.'
   contact:
     name: Apache Solr Reference Guide
     url: https://solr.apache.org/guide/
