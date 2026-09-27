@@ -10,15 +10,21 @@ description: >-
   cores, collections, and configurations.
 type: Index
 deliveryModel:
-  model: unknown
-  open_source: false
+  model: self-hosted
+  license: Apache-2.0
+  license_evidence:
+    repo: apache/solr
+    spdx: Apache-2.0
+    stars: 1677
+  open_source: true
   commercial: false
   callable_host: false
-  label: Delivery model not determined — needs a product licence on record
-  confidence: low
+  label: Self-hosted open source · you run it yourself
+  confidence: medium
   source:
   - openapi
-  generated: '2026-08-28'
+  - repository-license
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: unknown
@@ -39,7 +45,7 @@ tags:
   - Search
   - Enterprise Search
   - Full-Text Search
-  - Open-Source
+  - Open Source
   - Lucene
   - Indexing
 tags_raw:
@@ -49,6 +55,7 @@ tags_raw:
   - Open Source
   - Lucene
   - Indexing
+  - Open-Source
 url: >-
   https://raw.githubusercontent.com/api-evangelist/solr/refs/heads/main/apis.yml
 created: '2026-05-11'
